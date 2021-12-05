@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Gotham Rounded, sans-serif;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background: #111111;
+}
+
+.calculator-grid {
+  position: relative;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+  grid-template-columns: repeat(4, 100px);
+  width: 420px;
+  min-height: 550px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 3px solid rgb(255, 255, 255);
+  border-radius: 0.5em;
+  box-shadow: 0 0 35px inset rgb(133, 133, 133), 0 0 50px rgb(66, 66, 66);
+}
+
+.calculator-grid > button {
+  height: 100%;
+  font-size: 2rem;
+  cursor: pointer;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: transparent;
+  border: 2px solid rgb(255, 255, 255);
+  text-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+.output {
+  grid-column: 1 / -1;
+  border: 2px solid rgb(255, 255, 255);
+  transition: 0.3s ease-in-out;
+  height: 100%;
+  display: flex;
+  padding: 10px;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.calculator-grid > button:hover{
+    background: rgba(192, 192, 192, 0.11);
+}
+
+.span2 {
+  grid-column: span 2;
+}
+
+[data-previous-operand]{
+    font-size: 1.5rem;
+    color: white;
+}
+
+[data-current-operand]{
+    font-size: 2.5rem;
+    color: white;
+}
