@@ -21,6 +21,7 @@ nav .logo{
     text-transform: uppercase;
     font-weight: bold;
     color: white;
+    z-index: 99;
 }
 
 nav .links{
@@ -32,7 +33,6 @@ nav .links{
 
 nav .links .link-items{
     margin: 0 1rem;
-    /* cursor: pointer; */
 }
 
 nav .links .link-items a{
@@ -42,4 +42,41 @@ nav .links .link-items a{
 
 #hamburger{
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    z-index: 99;
+    cursor: pointer;
+}
+
+#hamburger span{
+    height: 4px;
+    width: 100%;
+    background: white;
+    margin: 3px 0;
+}
+
+@media (max-width:768px){
+    #hamburger{
+        display: flex;
+    }
+
+    nav .links{
+        display: none;
+    }
+
+    nav .links.show{
+        position: fixed;
+        inset: 0 0 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.7);
+    }
+    
+    nav .links.show .link-items{
+        margin: 1rem 0;
+    }
 }
