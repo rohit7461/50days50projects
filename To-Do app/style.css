@@ -108,6 +108,7 @@ h1 {
 
 svg{
   fill: #333;
+  pointer-events: none;
 }
 
 svg:hover{

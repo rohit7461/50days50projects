@@ -4,7 +4,7 @@ const todoList = document.querySelector(".todo-list");
 const status = document.getElementById("status");
 
 taskButton.addEventListener("click", addTask);
-todoList.addEventListener("click", dltChk)
+todoList.addEventListener("click", dltChk);
 
 function addTask(e) {
   e.preventDefault();
@@ -36,7 +36,14 @@ function addTask(e) {
   task.value = "";
 }
 
-function dltChk(e){
-    const item = e.target;
-    if()
+function dltChk(e) {
+  const item = e.target;
+  if (item.classList[0] === "trash") {
+    const todo = item.parentElement;
+    todo.remove()
+  }
+  if(item.classList[0] === "tick"){
+    const todo = item.parentElement;
+    todo.classList.toggle("completed")
+  }
 }
