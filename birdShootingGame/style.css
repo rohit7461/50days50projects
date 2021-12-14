@@ -21,7 +21,6 @@ body {
   width: 650px;
   overflow: hidden;
   cursor: crosshair;
-
 }
 
 .display .cloud1,
@@ -60,4 +59,7 @@ body {
 }
 
 button{
+    padding: 10px 40px;
+    margin-top: 1rem;
+    cursor: pointer;
 }
