@@ -1,0 +1,46 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #c5c5c5;
+}
+
+h1{
+    margin-bottom: 1rem;
+}
+
+button{
+    padding: 10px 40px;
+    border-radius: 10px;
+    border: 1px solid #222222;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    background: rgb(216, 216, 216);
+}
+
+
+ul.jokes{
+    width: 100%;
+    max-width: 500px;
+    list-style: none;
+}
+
+ul.jokes li{
+    width: 100%;
+    margin-bottom: 0.5rem;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+}
+
+
