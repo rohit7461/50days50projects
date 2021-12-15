@@ -14,13 +14,6 @@ let animate = null;
 startButton.addEventListener("click", startGame);
 
 function startGame() {
-  setInterval(() => {
-    const bird = document.createElement("img");
-    bird.src = "goose.png";
-    bird.classList.add("goose")
-    display.appendChild(bird);
-  }, 3000);
-
   const gooses = document.querySelectorAll(".goose");
   gooses.forEach((goose) => {
     animate = setInterval(() => {
@@ -40,9 +33,15 @@ function startGame() {
         goose.style.transitionDuration = 3 + "s";
         goose.classList.add("dead");
         console.log("You hit..");
+
         setTimeout(() => {
           goose.remove();
-        }, 3000);
+          const bird = document.createElement("img");
+          bird.src = "goose.png";
+          bird.classList.add("goose");
+          display.appendChild(bird);
+          // startGame();
+        }, 1000);
       }
     });
   });
