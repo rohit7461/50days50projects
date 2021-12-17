@@ -7,8 +7,11 @@ button.addEventListener("click", () => {
   })
     .then((res) => res.json())
     .then((data) => {
-        let joker = document.createElement("li")
-        joker.innerText = data.joke;
-        jokesList.appendChild(joker)
+      let joker = document.createElement("li");
+      joker.innerText = data.joke;
+      jokesList.appendChild(joker);
+    })
+    .catch((err) => {
+      console.log(err);
     });
 });
