@@ -51,12 +51,13 @@ label {
   cursor: pointer;
 }
 
-form [type="submit"] {
+button {
   background: transparent;
   border: 1px solid #22e0d7;
   font-size: 18px;
   padding: 0.5rem 2rem;
   margin-top: 0.5rem;
   color: #22e0d7;
+  cursor: pointer;
   width: 100%;
 }

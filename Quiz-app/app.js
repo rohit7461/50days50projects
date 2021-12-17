@@ -91,35 +91,57 @@ const aText = document.getElementById("a_text");
 const bText = document.getElementById("b_text");
 const cText = document.getElementById("c_text");
 const dText = document.getElementById("d_text");
-const option1 = document.getElementById("option1");
-const option2 = document.getElementById("option2");
-const option3 = document.getElementById("option3");
-const option4 = document.getElementById("option4");
+const answerEls = document.querySelectorAll(".answer");
 let score = 0;
 let count = 0;
 
-// load quiz data serially
 // check answer
 //   score++
 // next quiz
 // at end show score
 
-window.addEventListener("load", () => {
-  serveQuiz();
-});
+serveQuiz();
+
+function uncheckAnswer() {
+  answerEls.forEach((answerEl) => (answerEl.checked = false));
+}
 
 function serveQuiz() {
-  if (count >= 10) return;
-  quiz.option1.setAttribute("")
-  quiz.innerText = quizData[count].question;
-  aText.innerText = quizData[count].a;
-  bText.innerText = quizData[count].b;
-  cText.innerText = quizData[count].c;
-  dText.innerText = quizData[count].d;
-  count++;
+  uncheckAnswer();
+  const currentQuizData = quizData[count];
+
+  quiz.innerText = currentQuizData.question;
+  aText.innerText = currentQuizData.a;
+  bText.innerText = currentQuizData.b;
+  cText.innerText = currentQuizData.c;
+  dText.innerText = currentQuizData.d;
+}
+
+function getSelected() {
+  let answer;
+  answerEls.forEach((answerEl) => {
+    if (answerEl.checked) {
+      answer = answerEl.value;
+      console.log(answer);
+    }
+  });
+  return answer;
 }
 
 quizForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  serveQuiz();
+  const answer = getSelected();
+  if (answer) {
+    if (answer === quizData[count].answer) {
+      score++;
+    }
+    count++;
+
+    if (count < quizData.length) {
+      serveQuiz();
+    } else {
+      quizForm.innerHTML = `<h2>You answered ${score}/${quizData.length} questions correctly</h2>
+        <button onclick="location.reload()">Reload</button>`;
+    }
+  }
 });
