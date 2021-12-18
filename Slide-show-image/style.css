@@ -1,0 +1,60 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 1rem;
+  min-height: 100vh;
+  background: rgb(26, 26, 26);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  position: relative;
+  height: 500px;
+  border: 1px solid white;
+  width: 800px;
+}
+
+.container .image-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.container .image-container img {
+  display: none;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.container .image-container img.active {
+  display: block;
+}
+
+.bi-arrow-right-circle-fill,
+.bi-arrow-left-circle-fill {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  overflow: visible;
+  cursor: pointer;
+  user-select: none;
+}
+
+.bi-arrow-right-circle-fill {
+  right: -50px;
+}
+
+.bi-arrow-left-circle-fill {
+  left: -50px;
+}
