@@ -1,0 +1,116 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  background: #dbdbdb;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  box-shadow: 10px 10px 20px 5px inset #cac5c5, 10px 10px 20px 5px #cac5c5,
+    -10px -10px 20px 5px #f2f2f2, -10px -10px 20px 5px inset #f2f2f2;
+}
+
+.container::after{
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background: #db3b3b;
+  z-index: 100;
+  border-radius: 50%;
+}
+
+.container .marks span {
+  position: absolute;
+  width: 95%;
+  height: 3px;
+  transform: translate(-50%) rotate(calc(var(--i) * 30deg));
+  transform-origin: center;
+}
+
+.container .marks span::after {
+  position: absolute;
+  height: 100%;
+  width: 3%;
+  content: "";
+  background: #333333;
+}
+
+.container .marks span.hi::after{
+  width: 6%;
+  background: #db3b3b;
+}
+
+.container .arrows {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+}
+
+.hr,
+.min,
+.sec {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  /* transition: 0.3s ease; */
+}
+
+.hr{
+  width: 130px;
+  height: 130px;
+}
+
+.hr::before{
+  position: absolute;
+  content: "";
+  height: 65px;
+  width: 7px;
+  background: #333333;
+  border-radius: 10px 10px 0 0;
+}
+
+.min{
+  width: 190px;
+  height: 190px;
+}
+
+.min::before{
+  content: "";
+  position: absolute;
+  height: 95px;
+  width: 7px;
+  background: #555555;
+  border-radius: 10px 10px 0 0;
+}
+
+.sec{
+  width: 240px;
+  height: 240px;
+}
+
+.sec::before{
+  content: "";
+  position: absolute;
+  height: 140px;
+  width: 3px;
+  background: #db3b3b;
+  border-radius: 10px 10px 0 0;
+}
