@@ -1,0 +1,48 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #208ce4;
+}
+
+button {
+  padding: 8px 30px;
+  border: 3px solid #0d72c5;
+  color: #0d72c5;
+  background: #afdaff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#toasts {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.toast{
+    padding: 8px 20px;
+    border: 2px solid white;
+    margin-top: 10px;
+}
+
+.toast.error{
+    color: red;
+}
+.toast.warning{
+    color: yellow;
+}
+.toast.success{
+    color: rgb(23, 255, 139);
+}
