@@ -30,7 +30,6 @@ body {
   position: relative;
   height: 24vh;
   width: 19vw;
-  border-radius: 0.5rem;
   transition: 0.5s ease;
   transform-style: preserve-3d;
 }
@@ -52,9 +51,13 @@ body {
 
 .back {
   transform: rotateY(180deg);
-  background: #00ffff;
+  background: #ff0037;
 }
 
 .card.flipped {
   transform: rotateY(180deg);
+}
+
+.bi{
+  font-size: 48px;
 }
