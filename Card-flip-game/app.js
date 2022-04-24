@@ -21,9 +21,7 @@ const icons = [
   "bi-layout-wtf",
 ];
 
-form.addEventListener("change", () => {
-  console.log(cardsNo.value);
-});
+
 
 function generateRandomNumber() {
   randomNo = Math.floor(Math.random() * 10);
@@ -32,22 +30,31 @@ function generateRandomNumber() {
 
 function setCards(cardNum) {}
 
-for (let i = 0; i < cards.length; i++) {
-  cards[i].addEventListener("click", () => {
-    card[i].classList.toggle("flipped");
-  });
-}
+
 
 reset.addEventListener("click", () => {
   generateRandomNumber();
 });
 
-
-window.addEventListener("DOMContentLoaded", ()=>{
-    // startGame()
-    // setCards()
-    // selectCard()
-    //checkPair()
-    // removeCard()
-    // showResult()
-})
+window.addEventListener("DOMContentLoaded", () => {
+  // startGame()
+  form.addEventListener("change", () => {
+    console.log(cardsNo.value);
+    grid.innerHTML = `<div class="card-container">
+    <div class="card">
+      <div class="front"></div>
+      <div class="back"><i class="bi bi-usb-plug"></i></div>
+    </div>
+  </div>`;
+  for (let i = 0; i < cards.length; i++) {
+    cards[i].addEventListener("click", () => {
+      card[i].classList.toggle("flipped");
+    });
+  }
+  });
+  // setCards()
+  // selectCard()
+  //checkPair()
+  // removeCard()
+  // showResult()
+});
