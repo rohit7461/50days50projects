@@ -1,11 +1,109 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&display=swap");
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: 'Josefin Sans', sans-serif;
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+p,
+li {
+  font-size: 18px;
+}
+
+body {
+  position: relative;
+  font-family: "Josefin Sans", sans-serif;
+  color: #42514d;
+  background-color: #f7ede2;
+  min-height: 100vh;
+  padding: 30px 70px;
+}
+
+body::after {
+  content: "Todo List";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 200px;
+  color: rgba(242, 132, 130, 0.1);
+}
+
+header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .menu {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+header .menu .line {
+  display: block;
+  height: 4px;
+  width: 30px;
+  background: #f28482;
+}
+
+header .menu .line:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+header .logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+header .profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+header .profile .imgBx {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #f28482;
+  margin-bottom: 5px;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+main > :nth-child(n) {
+  margin-bottom: 25px;
+}
+
+main form input {
+  width: 500px;
+  height: 40px;
+  border: 2px solid #f5cac3;
+  background-color: #f6e2d7;
+  outline: none;
+  font-size: 18px;
+  color: #42514d;
+  padding: 0 10px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+main .todo-display {
 }
