@@ -105,5 +105,56 @@ main form input {
   font-family: "Josefin Sans", sans-serif;
 }
 
-main .todo-display {
+main .todos {
+  transition: 0.5s ease;
+}
+
+
+main .todos .todo {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f6e2d7;
+  border: 2px solid #f5cac3;
+  width: 700px;
+
+  padding: 15px 50px;
+  list-style-type: none;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+main .todos .todo.done p {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+main .todos .todo i {
+  margin: 0 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+main .todos .todo i:hover {
+  color: #f28482;
+}
+
+main .todo.fade{
+  animation: fall 0.3s linear forwards;
+}
+
+@keyframes fall{
+  0%{
+    opacity: 1;
+    transform: translateY(-0px) scale(1);
+  }
+  /* 25%{
+    opacity: 1;
+    transform: translateY(-50px) scale(1.1);
+  } */
+  100%{
+    opacity: 0;
+    transform: scale(1.1);
+  }
 }

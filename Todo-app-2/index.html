@@ -31,13 +31,18 @@
         <p class="date">08:10, Mon, 26th March, 2025.</p>
         <p>Enter your Todo task here :</p>
         <form>
-          <input type="text" name="todo" id="todo" />
+          <input
+            type="text"
+            name="todo"
+            id="todo"
+            autocomplete="off"
+            placeholder="Todos..."
+            autofocus
+          />
         </form>
-        <ul class="todos">
-          <li class="todo">Prepare lunch.</li>
-          <li class="todo">Turn off the pumps.</li>
-        </ul>
+        <ul class="todos"></ul>
       </main>
     </div>
+    <script src="app.js"></script>
   </body>
 </html>
