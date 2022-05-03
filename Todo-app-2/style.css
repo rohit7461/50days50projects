@@ -109,7 +109,6 @@ main .todos {
   transition: 0.5s ease;
 }
 
-
 main .todos .todo {
   position: relative;
   display: flex;
@@ -140,20 +139,16 @@ main .todos .todo i:hover {
   color: #f28482;
 }
 
-main .todo.fade{
+main .todo.fade {
   animation: fall 0.3s linear forwards;
 }
 
-@keyframes fall{
-  0%{
+@keyframes fall {
+  0% {
     opacity: 1;
     transform: translateY(-0px) scale(1);
   }
-  /* 25%{
-    opacity: 1;
-    transform: translateY(-50px) scale(1.1);
-  } */
-  100%{
+  100% {
     opacity: 0;
     transform: scale(1.1);
   }
