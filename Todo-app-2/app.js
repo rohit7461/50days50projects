@@ -2,6 +2,33 @@ const formEl = document.querySelector("form");
 const inputEl = document.querySelector("input");
 const todos = document.querySelector(".todos");
 
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+const minute = 1000 * 60;
+const hr = minute * 60;
+const day = hr * 60;
+const year = day * 365;
+
+window.addEventListener("load", () => {
+  const d = Date.now();
+  console.log(Math.ceil(d / year));
+});
+
 formEl.addEventListener("submit", (e) => {
   e.preventDefault();
   const todo = inputEl.value;
@@ -22,7 +49,7 @@ todos.addEventListener("click", (e) => {
     const todo = item.parentElement.parentElement;
     todo.classList.add("fade");
     todo.addEventListener("animationend", () => {
-      console.log("remove")
+      console.log("remove");
       todo.remove();
     });
   }
