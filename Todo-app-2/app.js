@@ -1,6 +1,10 @@
 const formEl = document.querySelector("form");
 const inputEl = document.querySelector("input");
 const todos = document.querySelector(".todos");
+const currentYear = document.getElementById("year");
+const currentDay = document.getElementById("day");
+const currentMonth = document.getElementById("month");
+const currentDate = document.getElementById("date");
 
 const months = [
   "January",
@@ -21,14 +25,21 @@ const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 const minute = 1000 * 60;
 const hr = minute * 60;
-const day = hr * 60;
+const day = hr * 24;
+const month = day * 30;
 const year = day * 365;
 
 window.addEventListener("load", () => {
   const d = Date.now();
-  console.log(Math.ceil(d / year));
+  const date = new Date(d);
+  console.log(date);
+  currentYear.innerHTML = date.getFullYear();
+  currentMonth.innerHTML = months[date.getMonth()];
+  currentDate.innerHTML = date.getDate();
+  currentDay.innerHTML = days[date.getDay()];
 });
 
+// event on form submission
 formEl.addEventListener("submit", (e) => {
   e.preventDefault();
   const todo = inputEl.value;
@@ -39,6 +50,7 @@ formEl.addEventListener("submit", (e) => {
   }
 });
 
+// event on todo-items
 todos.addEventListener("click", (e) => {
   const item = e.target;
   if (item.classList[0] == "check") {
