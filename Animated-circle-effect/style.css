@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+section {
+    position: relative;
+    background: #252525;
+    min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.text {
+  position: absolute;
+  user-select: none;
+  pointer-events: none;
+  transition: 10ms linear;
+  font-size: 1rem;
+  animation: animate 6s linear infinite;
+}
+
+span {
+  position: absolute;
+  display: inline-block;
+  transform-origin: 0 100px;
+  text-transform: uppercase;
+  color: white;
+  top: -100px;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
