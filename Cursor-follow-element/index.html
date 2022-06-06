@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cursor Follow Element</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="element"></div>
+    </div>
+    <script>
+      const element = document.querySelector(".element");
+      const container = document.querySelector(".container");
+
+      container.addEventListener("mousemove", (e) => {
+        const posX = e.clientX - e.target.offsetLeft;
+        const posY = e.clientY - e.target.offsetTop;
+
+        element.style.left = `${posX}px`;
+        element.style.top = `${posY}px`;
+      });
+    </script>
+  </body>
+</html>
