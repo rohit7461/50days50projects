@@ -13,9 +13,9 @@ forms.forEach((form) => {
 
 signupBtn.addEventListener("click", () => {
   console.log(container.classList);
-  container.classList.add("active");
+  container.classList.add("right-panel-active");
 });
 
 signinBtn.addEventListener("click", () => {
-  container.classList.remove("active");
+  container.classList.remove("right-panel-active");
 });
