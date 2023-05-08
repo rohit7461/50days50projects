@@ -1,0 +1,81 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+}
+
+h1,p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: whitesmoke;
+}
+
+.slider-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.left-slide,
+.right-slide{
+    position: absolute;
+    transition: 0.6s cubic-bezier(.15,.5,.76,.92);
+}
+
+.left-slide {
+    /* height: 100%; */
+    width: 35%;
+    left: 0;
+}
+
+.right-slide {
+    left: 35%;
+    width: 65%;
+    top: 0;
+}
+
+.left-slide>div,
+.right-slide>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-position: center;
+    background-size:cover;
+}
+
+.action-buttons {
+    position: fixed;
+    left: 35%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.action-buttons > div{
+    padding: 8px;
+    background: whitesmoke;
+    cursor: pointer;
+}
+
+.up-button{
+    border-radius: 0 5px 5px 0;
+}
+
+.down-button{
+    border-radius: 5px 0 0 5px;
+    transform: translateX(-100%);
+}
+
+i{
+    color: grey;
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+.action-buttons > div:hover i{
+    color: rgb(43, 43, 43);
+}
